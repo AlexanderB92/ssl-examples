@@ -65,6 +65,7 @@ def http(url, secure=443, encoding='utf-8'):
             if HTTPS: sock = handshake(sock)
             sock.sendall(header)
             resp = HTTPResponse(sock)
+            #log resp
             print(parse_response(resp))
             return parse_response(resp)
         finally:
